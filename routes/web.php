@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.layouts');
 });
+
+Route::get('admin/login','Auth\AdminAuthController@getLogin')->name('admin.login');
+Route::post('admin/login','Auth\AdminAuthController@postLogin');
+
+Route::get('/users/add', function () {
+    return view('auth.create');
+});
